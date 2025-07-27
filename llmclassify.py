@@ -6,6 +6,15 @@ import os, re
 pd.options.display.max_colwidth = 1000
 from pathlib import Path
 import re
+from dotenv import load_dotenv
+import os
+
+# Load .env file from the current directory
+load_dotenv()
+
+# Access environment variables
+api_key = os.getenv("API_KEY")
+debug_mode = os.getenv("DEBUG")
 
 output_path = "./data"
 
@@ -25,7 +34,7 @@ def classify_ntd_ml(abstract_text, model_name='gpt-4o-mini'):
     Provide ONLY the required output format with no additional text, explanations, or justifications.
     """
     client = OpenAI(
-        api_key = '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'
+        api_key = api_key
     )
     system_prompt = "You are an expert computational epidemiologist specializing in neglected tropical diseases and machine learning applications in healthcare."
     input = [
@@ -61,7 +70,7 @@ def classify_ntd_location(affiliation_text, model_name='gpt-4o-mini'):
     If multiple locations are listed, choose the primary listed."""
     client = OpenAI(
         #add you OpenAI API Key
-          api_key = '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'
+          api_key = api_key
       )
     system_prompt = "You are an expert in geographic metadata extraction."
     input = [
@@ -109,7 +118,7 @@ def classify_ntd_funding(funding_text, funding_details, model_name='gpt-4o-mini'
 
     client = OpenAI(
         #add you OpenAI API Key
-          api_key = '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'
+          api_key = api_key
       )
     system_prompt = "You are an expert in funding metadata extraction."
     input = [
@@ -176,7 +185,7 @@ def classify_ntd_abstract(abstract_text, model_name='gpt-4o-mini'):
     """
     client = OpenAI(
 
-        api_key = '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'
+        api_key = api_key
     )
     system_prompt = "You are an expert computational epidemiologist specializing in neglected tropical diseases and machine learning applications in healthcare."
     input = [
