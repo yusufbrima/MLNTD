@@ -13,7 +13,7 @@ import os
 load_dotenv()
 
 # Access environment variables
-api_key = os.getenv("API_KEY")
+api_key = os.getenv("OPEN_API_KEY")
 debug_mode = os.getenv("DEBUG")
 
 output_path = "./data"
