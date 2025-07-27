@@ -2,6 +2,10 @@
 
 This project analyzes trends in machine learning techniques and funding sources in neglected tropical disease research.
 
+
+![Sankey Plot](figures/sankey_funding_disease_affiliations.png)
+
+
 ## Installation
 
 Create a new environment using Conda and install required packages with pip:
